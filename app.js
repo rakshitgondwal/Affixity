@@ -1,5 +1,6 @@
-import express from 'express';
-import mongoose from 'mongoose';
+
+const express = require('express');
+const mongoose = require('mongoose');
 
 const port = 3000;
 
@@ -13,20 +14,19 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-
-app.get("/posts", function(req,res){
-    res.send("Nice");
+app.get("/", function(req,res){
+    res.redirect("/signin")
 });
 
-
 app.get("/signin", function(req,res){
-    res.sendFile(__dirname+"/views/signin.html");
+    res.sendFile(__dirname + '/views/signin.html');
+} );
+
+app.get("/signup", function(req,res){
+    res.sendFile(__dirname + '/views/signin.html');
 } );
 
 
-app.get("/", function(req,res){
-    res.send("Server working properly.!")
-});
 
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
