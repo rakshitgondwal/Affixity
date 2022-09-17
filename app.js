@@ -23,10 +23,12 @@ app.get("/signin", function(req,res){
 } );
 
 app.get("/signup", function(req,res){
-    res.sendFile(__dirname + '/views/signin.html');
+    res.sendFile(__dirname + '/views/signup.html');
 } );
 
-
+app.post("/signin", function(req,res){
+    res.redirect("/signup");
+});
 
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
