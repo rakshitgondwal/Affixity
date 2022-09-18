@@ -115,6 +115,14 @@ app.get("/landing",function(req,res){
     res.sendFile(__dirname + "/pages/landing/index.html")
 });
 
+app.get("/lists",function(req,res){
+    res.sendFile(__dirname + "/pages/lists.html")
+});
+
+app.get("/myprofile",function(req,res){
+  res.sendFile(__dirname + "/pages/myprofile.html")
+});
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                          //POST FUNCTIONS//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -125,7 +133,11 @@ app.post("/signin", function(req,res){
         console.log(err);
       }else{
         for(var i = 0; i<users.length; i++){
-          if(users[i].email == req.body.signInEmail && users[i].passowrd == req.body.signInPass)
+          if(users[i].email == req.body.signInEmail && users[i].passowrd == req.body.signInPass){
+            res.redirect("/landing");
+          }else{
+            res.send("User not found. Please signup.");
+          }
         }
       }
     })
