@@ -1,9 +1,10 @@
-
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
 var userProfile;
 
 const port = 3000;
@@ -13,9 +14,6 @@ const app = express();
 
 app.use(express.static('public'))
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.set('view engine', 'ejs');
 
 app.use(session({
@@ -23,6 +21,10 @@ app.use(session({
   saveUninitialized: true,
   secret: 'SECRET' 
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 mongoose.connect('mongodb+srv://rakshitgondwal:chitkararakshit@cluster0.wofkim8.mongodb.net/affixity');
 
@@ -41,8 +43,8 @@ app.get('/error', (req, res) => res.send("error logging in"));
 
 
 passport.use(new GoogleStrategy({
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL: "http://localhost:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
@@ -73,9 +75,6 @@ passport.deserializeUser(function(obj, cb) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                          //GET FUNCTIONS//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-app.get("/signin", function(req,res){
-    res.sendFile(__dirname + '/pages/signin.html');
-} );
 
 app.get("/signup", function(req,res){
     res.sendFile(__dirname + '/pages/signup.html');
@@ -90,8 +89,10 @@ app.get("/landing",function(req,res){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.post("/signin", function(req,res){
-    res.redirect("/landing");
+    res.redirect("/auth/google");
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
