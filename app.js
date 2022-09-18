@@ -4,16 +4,15 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-
+const port = 3000;
 var userProfile;
 
-const port = 3000;
+
 const app = express();
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.use(express.static('public'))
-
 app.set('view engine', 'ejs');
 
 app.use(session({
@@ -25,13 +24,45 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-mongoose.connect('mongodb+srv://rakshitgondwal:chitkararakshit@cluster0.wofkim8.mongodb.net/affixity');
-
-
 app.use(express.urlencoded({
-    extended: true
+  extended: true
 }));
+
+mongoose.connect('mongodb+srv://rakshitgondwal:chitkararakshit@cluster0.wofkim8.mongodb.net/affixity',{
+  useNewUrlParser : true
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const userSchema = new mongoose.Schema({
+  name : String,
+  email : String,
+  password : String,
+  gradyear : String,
+  techStacks : String,
+  github : String,
+  linkedIn : String,
+  twitter : String
+});
+
+
+const User = mongoose.model("User", userSchema);
+
+app.post("/signup", function(req,res){
+  const user = new User({
+    name : req.body.name,
+    email : req.body.email,
+    gradyear : req.body.gradyear,
+    password : req.body.password
+  });
+  
+  user.save();
+});
+
+
+
+
+
 
 app.get("/", function(req,res){
     res.render('pages/auth');
@@ -89,7 +120,15 @@ app.get("/landing",function(req,res){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.post("/signin", function(req,res){
-    res.redirect("/auth/google");
+    User.find({},function(err,users){
+      if(err){
+        console.log(err);
+      }else{
+        for(var i = 0; i<users.length; i++){
+          if(users[i].email == req.body.signInEmail && users[i].passowrd == req.body.signInPass)
+        }
+      }
+    })
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Document</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/9a687040e3.js" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/9a687040e3.js" crossorigin="anonymous"></script>
 </head>
 
 
@@ -18,21 +18,23 @@
 <body>
 
 
-  <header class="bg-transparent fixed w-full top-0 left-0 z-30">
-    <div class="container p-5 mx-auto ">
-      <div class="flex mx-auto">
-        <p class="text-5xl text-white logo" style="font-family:'Passion One', cursive ;">AFFIXITY</p>
-      </div>
+	<header class="bg-transparent fixed w-full top-0 left-0 z-30">
+		<div class="container p-5 mx-auto ">
+			<div class="flex mx-auto">
+				<p class="text-5xl text-white logo" style="font-family:'Passion One', cursive ;">AFFIXITY</p>
+			</div>
 
-    </div>
+		</div>
 
-  </header>
-  <div class="bg-purple-900 fixed bg-gradient-to-b from-gray-900 via-gray-900 to-purple-800 bottom-0 leading-5 h-screen w-full overflow-hidden">
-  </div>
-	
-  
+	</header>
+	<div
+		class="bg-purple-900 fixed bg-gradient-to-b from-gray-900 via-gray-900 to-purple-800 bottom-0 leading-5 h-screen w-full overflow-hidden">
+	</div>
 
-  <div class="relative  mt-20 sm:mt-0 min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent p-6 sm:p-24 sm:pb-0 rounded-3xl shadow-xl">
+
+
+	<div
+		class="relative  mt-20 sm:mt-0 min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent p-6 sm:p-24 sm:pb-0 rounded-3xl shadow-xl">
 
 		<div class="flex justify-center self-center  z-10">
 			<div class="p-12 bg-white mx-auto rounded-3xl w-96 h-full ">
@@ -40,39 +42,56 @@
 					<h3 class="font-semibold text-4xl text-purple-800"><strong>Sign Up</strong> </h3>
 				</div>
 				<div class="space-y-6">
-          <div class="">
+					<form action="/signup" method="post">
+						<div class="">
 
-            <input class=" w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400" type="text" placeholder="Name">
-          </div>
-					<div class="">
-						<input class="w-full text-start  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400" type="email" placeholder="Email">
-					</div>
-					<div>
-						<input placeholder="Password" :type="show ? 'password' : 'text'" class="text-sm text-gray-700 px-3 py-3 rounded-lg w-full bg-white border border-gray-700 focus:outline-none focus:border-purple-400">
-					</div>
-          			<div class="">
-						<input class=" w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400" type="month" placeholder="Graduation Year">
-					</div>
-					<div>
-						<i class="fa-brands fa-github fa-lg absolute mt-6 ml-64"></i>
-							<input type="text" class="w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"  placeholder="GitHub link">
-					</div>
-					<div>
-						<i class="fa-brands fa-linkedin fa-lg absolute mt-6 ml-64"></i>
-							<input type="text" class="w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"  placeholder="LinkedIn link">
-					</div>
-					<div>
-						<i class="fa-brands fa-twitter fa-lg absolute mt-6 ml-64"></i>
-							<input type="text" class="w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"  placeholder="Twitter link">
-					</div>
+							<input name="name"
+								class=" w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"
+								type="text" placeholder="Name">
+						</div>
+						<div class="">
+							<input name="email"
+								class="w-full text-start  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"
+								type="email" placeholder="Email">
+						</div>
+						<div>
+							<input name="password" placeholder="Password" :type="show ? 'password' : 'text'"
+								class="text-sm text-gray-700 px-3 py-3 rounded-lg w-full bg-white border border-gray-700 focus:outline-none focus:border-purple-400">
+						</div>
+						<div class="">
+							<input name="gradyear"
+								class=" w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"
+								type="month" placeholder="Graduation Year">
+						</div>
+						<div>
+							<i class="fa-brands fa-github fa-lg absolute mt-6 ml-64"></i>
+							<input name="gitLink" type="text"
+								class="w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"
+								placeholder="GitHub link">
+						</div>
+						<div>
+							<i class="fa-brands fa-linkedin fa-lg absolute mt-6 ml-64"></i>
+							<input name="linkLink" type="text"
+								class="w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"
+								placeholder="LinkedIn link">
+						</div>
+						<div>
+							<i class="fa-brands fa-twitter fa-lg absolute mt-6 ml-64"></i>
+							<input name="twtLink" type="text"
+								class="w-full text-base  px-3 py-3 bg-white border border-gray-700 text-gray-900 rounded-lg focus:outline-none focus:border-purple-400"
+								placeholder="Twitter link">
+						</div>
+
+						<div class="">
+							<button type="submit"
+								class="mt-8 w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+								Sign up
+							</button>
+						</div>
+					</form>
 
 
-
-					<div class="">
-						<button type="submit" class="mt-8 w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
-							Sign up
-						</button>
-					</div>
+					
 					<div class="flex items-center justify-center space-x-2 my-5">
 						<span class="h-px w-16 bg-gray-700"></span>
 						<span class="text-gray-400 font-normal">or</span>
@@ -85,31 +104,37 @@
 						<button type="submit"
 							class="w-36 mx-auto flex items-center justify-center border border-gray-700 hover:border-gray-900 hover:bg-gray-900 text-sm  text-gray-700 hover:text-white p-3 rounded-lg tracking-wide font-medium  cursor-pointer transition ease-in duration-200">
 							<svg class="w-4 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3C17.782 1.145 15.055 0 12 0 7.27 0 3.198 2.698 1.24 6.65l4.026 3.115Z" />
-								<path fill="#34A853" d="M16.04 18.013c-1.09.703-2.474 1.078-4.04 1.078a7.077 7.077 0 0 1-6.723-4.823l-4.04 3.067A11.965 11.965 0 0 0 12 24c2.933 0 5.735-1.043 7.834-3l-3.793-2.987Z" />
-								<path fill="#4A90E2" d="M19.834 21c2.195-2.048 3.62-5.096 3.62-9 0-.71-.109-1.473-.272-2.182H12v4.637h6.436c-.317 1.559-1.17 2.766-2.395 3.558L19.834 21Z" />
-								<path fill="#FBBC05" d="M5.277 14.268A7.12 7.12 0 0 1 4.909 12c0-.782.125-1.533.357-2.235L1.24 6.65A11.934 11.934 0 0 0 0 12c0 1.92.445 3.73 1.237 5.335l4.04-3.067Z" />
+								<path fill="#EA4335"
+									d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3C17.782 1.145 15.055 0 12 0 7.27 0 3.198 2.698 1.24 6.65l4.026 3.115Z" />
+								<path fill="#34A853"
+									d="M16.04 18.013c-1.09.703-2.474 1.078-4.04 1.078a7.077 7.077 0 0 1-6.723-4.823l-4.04 3.067A11.965 11.965 0 0 0 12 24c2.933 0 5.735-1.043 7.834-3l-3.793-2.987Z" />
+								<path fill="#4A90E2"
+									d="M19.834 21c2.195-2.048 3.62-5.096 3.62-9 0-.71-.109-1.473-.272-2.182H12v4.637h6.436c-.317 1.559-1.17 2.766-2.395 3.558L19.834 21Z" />
+								<path fill="#FBBC05"
+									d="M5.277 14.268A7.12 7.12 0 0 1 4.909 12c0-.782.125-1.533.357-2.235L1.24 6.65A11.934 11.934 0 0 0 0 12c0 1.92.445 3.73 1.237 5.335l4.04-3.067Z" />
 							</svg>
 							<span>Google</span>
 						</button>
 					</div>
 				</div>
-        <div class="text-sm pt-8 flex items-center justify-center">
-          <p class="text-center text-gray-500 ">
-            Already a user ?
-          <a href="/" class="text-purple-700 hover:text-purple-600">
-            Log in
-          </a></p>
-        </div>
+				<div class="text-sm pt-8 flex items-center justify-center">
+					<p class="text-center text-gray-500 ">
+						Already a user ?
+						<a href="/" class="text-purple-700 hover:text-purple-600">
+							Log in
+						</a>
+					</p>
+				</div>
 				<div class="mt-7 text-center text-gray-400 text-xs">
 					<span>
 						Copyright © 2022
-						<a href="https://github.com/rakshitgondwal/Affixity" rel="" target="_blank" title="Codepen aji" class="text-violet-500 hover:text-violet-600 ">AFFIXITY</a></span>
+						<a href="https://github.com/rakshitgondwal/Affixity" rel="" target="_blank" title="Codepen aji"
+							class="text-violet-500 hover:text-violet-600 ">AFFIXITY</a></span>
 				</div>
 			</div>
 		</div>
 
-  </div>
+	</div>
 
 
 	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>
