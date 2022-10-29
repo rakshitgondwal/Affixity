@@ -73,9 +73,9 @@ app.get('/error', (req, res) => res.send("error logging in"));
 
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
+    clientID: "646078365007-56v2p454pcq9bm38kolo3rf1clgrnkl3.apps.googleusercontent.com",
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: "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"
   },
   function(accessToken, refreshToken, profile, done) {
       userProfile=profile;
