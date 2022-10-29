@@ -2,6 +2,9 @@
   "name": "without-react",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "16.17.0"
+    },
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
