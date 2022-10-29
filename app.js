@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const port = 3000;
+const port = 3001;
 var userProfile;
 
 
@@ -65,7 +65,7 @@ app.post("/signup", function(req,res){
 
 
 app.get("/", function(req,res){
-    res.render('pages/auth');
+  res.sendFile(__dirname + "/pages/landing/index.html")
 });
 
 
