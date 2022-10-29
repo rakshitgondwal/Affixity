@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const port = process.env.PORT;
 var userProfile;
 
 
@@ -145,6 +144,6 @@ app.post("/signin", function(req,res){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
-  });
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Server started on port`);
+});

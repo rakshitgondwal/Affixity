@@ -2,15 +2,20 @@
   "name": "without-react",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "16.17.0"
-    },
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakshitgondwal/Affixity.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rakshitgondwal/Affixity/issues"
+  },
+  "homepage": "https://github.com/rakshitgondwal/Affixity#readme",
   "dependencies": {
     "dotenv": "^16.0.2",
     "ejs": "^3.1.8",
