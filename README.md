@@ -34,7 +34,9 @@
   
 - run `npm install` to install the dependencies.
   
-- run 
+- run `npm start` to start the server.
+
+- Access the website on `localhost:3000`
   
   
 </p> 
