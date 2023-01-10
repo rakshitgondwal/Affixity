@@ -19,3 +19,14 @@
 - There are platforms available like LinkedIn but these platforms don’t provide us with the sorted list of students from a specific year. By creating this website, we are going to help the students and especially freshers, as they find it very difficult to find good seniors or good alumni to connect with.
 </h4> 
 
+<h3 align=center>Run the project locally-</h3> 
+<h6 align=left>
+  
+- Fork and Star the repository.
+
+- It sorts out the students based on their graduation year and then show a list of all the students present in a specific year. 
+
+- Students will be able to create their profiles and add their socials to their profiles.  Through this, other students would be able to connect on other social platforms too.
+
+- There are platforms available like LinkedIn but these platforms don’t provide us with the sorted list of students from a specific year. By creating this website, we are going to help the students and especially freshers, as they find it very difficult to find good seniors or good alumni to connect with.
+</h6> 
