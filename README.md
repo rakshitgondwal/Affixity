@@ -7,7 +7,6 @@
 
 <h4 align=center>College students face difficulties in finding like-minded seniors or alumni from whom they can connect and take guidance. This platform helps students to connect and their seniors from their university</h4>
 
-<h2 align=center>Solution</h2> 
 
 <h4 align=center>
 - This is an online platform in which students would be able to connect and chat with the seniors or alumni or their batchmates from their university. 
