@@ -8,7 +8,8 @@
 <h4 align=center>College students face difficulties in finding like-minded seniors or alumni from whom they can connect and take guidance. This platform helps students to connect and their seniors from their university</h4>
 
 
-<h4 align=center>
+<h4 align=left>
+  
 - This is an online platform in which students would be able to connect and chat with the seniors or alumni or their batchmates from their university. 
 
 - It sorts out the students based on their graduation year and then show a list of all the students present in a specific year. 
